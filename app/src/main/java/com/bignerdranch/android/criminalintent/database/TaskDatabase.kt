@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.bignerdranch.android.criminalintent.Task
 
-@Database(entities = [ Task::class ], version=1)
+@Database(entities = [ Task::class ], version=2)
 @TypeConverters(TaskTypeConverters::class)
 abstract class TaskDatabase : RoomDatabase() {
 

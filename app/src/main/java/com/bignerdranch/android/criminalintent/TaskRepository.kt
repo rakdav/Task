@@ -46,7 +46,7 @@ class TaskRepository private constructor(context: Context) {
 
         fun get(): TaskRepository {
             return INSTANCE ?:
-            throw IllegalStateException("CrimeRepository must be initialized")
+            throw IllegalStateException("TaskRepository must be initialized")
         }
     }
 }
