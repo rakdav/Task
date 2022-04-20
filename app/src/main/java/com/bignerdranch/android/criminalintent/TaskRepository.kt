@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.Room
 import com.bignerdranch.android.criminalintent.database.TaskDatabase
 import com.bignerdranch.android.criminalintent.database.migration_2_3
+import java.io.File
 import java.util.*
 import java.util.concurrent.Executors
 
@@ -19,6 +20,7 @@ class TaskRepository private constructor(context: Context) {
     ).addMigrations(migration_2_3).build()
     private val crimeDao = database.crimeDao()
     private val executor = Executors.newSingleThreadExecutor()
+    private val filesDir=context.applicationContext.filesDir
 
     fun getCrimes(): LiveData<List<Task>> = crimeDao.getCrimes()
 
@@ -35,7 +37,9 @@ class TaskRepository private constructor(context: Context) {
             crimeDao.addCrime(task)
         }
     }
-    
+    fun getPhotoFile(task:Task):
+            File=File(filesDir,task.PhotoFileName)
+
     companion object {
         private var INSTANCE: TaskRepository? = null
 

@@ -10,3 +10,7 @@ data class Task(@PrimaryKey val id: UUID = UUID.randomUUID(),
                 var date: Date = Date(),
                 var isSolved: Boolean = false,
                 var suspect:String="")
+                {
+                    val PhotoFileName
+                    get() = "img_$id.jpg"
+                }
