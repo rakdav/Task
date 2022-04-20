@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.room.Room
 import com.bignerdranch.android.criminalintent.database.TaskDatabase
+import com.bignerdranch.android.criminalintent.database.migration_2_3
 import java.util.*
 import java.util.concurrent.Executors
 
@@ -15,7 +16,7 @@ class TaskRepository private constructor(context: Context) {
         context.applicationContext,
         TaskDatabase::class.java,
         DATABASE_NAME
-    ).build()
+    ).addMigrations(migration_2_3).build()
     private val crimeDao = database.crimeDao()
     private val executor = Executors.newSingleThreadExecutor()
 

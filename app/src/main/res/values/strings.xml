@@ -5,4 +5,13 @@
     <string name="crime_details_label">Details</string>
     <string name="crime_solved_label">Solved</string>
     <string name="new_task">New Task</string>
+    <string name="task_suspect_text">Choose Suspect</string>
+    <string name="task_support_text">Send Report</string>
+    <string name="task_report">%1$s!The task was discovered on %2$s. %3$s, and %4$s</string>
+    <string name="task_report_solved">The task is solved</string>
+    <string name="task_report_unsolved">The task is not solved</string>
+    <string name="task_report_no_suspect">there is no suspect.</string>
+    <string name="task_report_suspect">the suspect is %s.</string>
+    <string name="task_report_subject">Task report</string>
+    <string name="send_report">Send task report via</string>
 </resources>

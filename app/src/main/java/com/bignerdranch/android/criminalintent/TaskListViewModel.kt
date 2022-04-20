@@ -6,4 +6,7 @@ class TaskListViewModel : ViewModel() {
 
     private val taskRepository = TaskRepository.get()
     val taskListLiveData = taskRepository.getCrimes()
+    fun addTask(task: Task){
+        taskRepository.addCrime(task);
+    }
 }
