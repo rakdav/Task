@@ -1,7 +1,9 @@
 package com.bignerdranch.android.criminalintent
 
+import android.app.Activity
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Point
 
 fun getScaleBitmap(path:String,destWidth:Int,destHeight:Int):Bitmap
 {
@@ -28,4 +30,9 @@ fun getScaleBitmap(path:String,destWidth:Int,destHeight:Int):Bitmap
     options=BitmapFactory.Options()
     options.inSampleSize=inSampleSize
     return BitmapFactory.decodeFile(path,options)
+}
+fun getScaleBitmap(path: String,activity: Activity):Bitmap{
+    val size=Point()
+    activity.windowManager.defaultDisplay.getSize(size)
+    return getScaleBitmap(path,size.x,size.y)
 }
