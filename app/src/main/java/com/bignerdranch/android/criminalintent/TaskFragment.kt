@@ -66,8 +66,8 @@ class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
         solvedCheckBox = view.findViewById(R.id.crime_solved) as CheckBox
         reportButton=view.findViewById(R.id.task_report) as Button
         suspectButton=view.findViewById(R.id.task_suspect) as Button
-        photoButton=view.findViewById(R.id.task_foto)
-        photoView=view.findViewById(R.id.camera)
+        photoButton=view.findViewById(R.id.camera)
+        photoView=view.findViewById(R.id.task_foto)
         return view
     }
 
