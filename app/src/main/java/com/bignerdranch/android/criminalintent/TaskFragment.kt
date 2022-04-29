@@ -188,11 +188,16 @@ class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
         {
             suspectButton.text=task.suspect
         }
+        updatePhotoView()
     }
     private fun updatePhotoView()
     {
         if(photoFile.exists()){
-           //val bitmap=
+           val bitmap= getScaleBitmap(photoFile.path,requireActivity())
+            photoView.setImageBitmap(bitmap)
+        }else
+        {
+            photoView.setImageBitmap(null)
         }
     }
     private fun getTaskReport():String
@@ -231,6 +236,9 @@ class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
                     taskDetailViewModel.saveCrime(task)
                     suspectButton.text=suspect
                 }
+            }
+            requestCode== REQUEST_FOTO-> {
+                updatePhotoView()
             }
         }
     }
