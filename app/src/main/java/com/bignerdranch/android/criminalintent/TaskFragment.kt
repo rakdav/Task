@@ -177,6 +177,11 @@ class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
         updateUI()
     }
 
+    override fun onDetach() {
+        super.onDetach()
+        requireActivity().revokeUriPermission(photoUri,Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
+    }
+
     private fun updateUI() {
         titleField.setText(task.title)
         dateButton.text = task.date.toString()
@@ -238,6 +243,7 @@ class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
                 }
             }
             requestCode== REQUEST_FOTO-> {
+                requireActivity().revokeUriPermission(photoUri,Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
                 updatePhotoView()
             }
         }
