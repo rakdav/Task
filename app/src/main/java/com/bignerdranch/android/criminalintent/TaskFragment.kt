@@ -189,6 +189,12 @@ class CrimeFragment : Fragment(), DatePickerFragment.Callbacks {
             suspectButton.text=task.suspect
         }
     }
+    private fun updatePhotoView()
+    {
+        if(photoFile.exists()){
+           //val bitmap=
+        }
+    }
     private fun getTaskReport():String
     {
         val solvedString=if(task.isSolved){
